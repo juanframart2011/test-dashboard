@@ -117,19 +117,13 @@ class User extends Controller
             'email.unique' => 'El Correo ya existe en el sistema',
             'password.required' => 'La Contraseña es obligatoria',
             're-password.required' => 'La Confirmación de contraseña es obligatoria',
-            'rol.required' => 'El perfil es obligatorio',
-            'profile.required' => 'El puesto es obligatorio',
             'name.required' => 'El nombre es obligatorio',
-            'last_name.required' => 'El apellido es obligatorio',
         ];
         $validate = Validator::make( $request->all(), [
             'email' => 'required|email|unique:user,email',
             'password' => 'required|same:re-password|between:5,11',
             're-password' => 'required|between:5,11',
-            'profile' => 'required',
-            'rol' => 'required',
-            'name' => 'required',
-            'last_name' => 'required'
+            'name' => 'required'
         ], $messages );
         
         if( $validate->fails() ){
@@ -146,8 +140,7 @@ class User extends Controller
             $last_name = $request->get( "last_name" );
             $email = $request->get( "email" );
             $password = $request->get( "password" );
-            $rol_id = Crypt::decryptString( $request->get( "rol" ) );
-            $profile_id = Crypt::decryptString( $request->get( "profile" ) );
+            $rol_id = 1;
 
             $password = md5( $password );
 
@@ -157,11 +150,9 @@ class User extends Controller
                 
                 $userNew = new UserModel;
                 $userNew->name = $name;
-                $userNew->last_name = $last_name;
                 $userNew->email = $email;
                 $userNew->password = $password;
                 $userNew->rol_id = $rol_id;
-                $userNew->profile_id = $profile_id;
                 $userNew->creation_date = date( "Y-m-d H:i:s" );
                 $userNew->save();
 

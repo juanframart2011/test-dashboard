@@ -25,10 +25,10 @@
 
             @csrf
             <div class="mb-3">
-                <input type="email" placeholder="EMAIL" class="form-control" id="user" name="user" aria-describedby="userHelp">
+                <input type="email" placeholder="Email" class="form-control" id="user" name="user">
             </div>
             <div class="mb-3">
-                <input type="password" placeholder="CONTRASEÑA" class="form-control" id="password" name="password">
+                <input type="password" placeholder="Contraseña" class="form-control" id="password" name="password">
             </div>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="row mt-2">
-        <p class="text-center">¿Aún no tienes una cuenta? <a href="" style="font-weight: bold;text-decoration: none;color: white;">Regístrate</a></p>
+        <p class="text-center">¿Aún no tienes una cuenta? <a href="{{ route( 'register' ) }}" style="font-weight: bold;text-decoration: none;color: white;">Regístrate</a></p>
     </div>
 @endsection
 
