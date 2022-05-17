@@ -23,7 +23,7 @@ class User extends Controller
             "statu_id" => $statu,
             "last_modification" => date( "Y-m-d H:i:s" )
         ]);
-        return Redirect( 'admin/dashboard' )->with( 'message-success', 'Se realizo el cambio en el usuario' );
+        return Redirect( 'admin/dashboard' )->with( 'user-change-success', 'Se realizo el cambio en el usuario' );
     }
 
     public function edit( Request $request, $userId ){

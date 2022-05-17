@@ -1,4 +1,18 @@
 <div class="col-md-6">
+
+    @if( Session( 'user-change-success' ) )
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                
+                <div class="alert alert-success" role="alert">
+                    <p>
+                        {{ Session( 'user-change-success' ) }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    @endif
             
     <div class="row">
         <h4 class="text-center">Aprobar Usuarios</h4>
