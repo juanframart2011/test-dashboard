@@ -32,4 +32,6 @@ Route::get( 'logout', [ 'as' => 'logout', 'uses' => 'App\Http\Controllers\User@l
 Route::group(['prefix' => 'admin', 'middleware' => 'validAdmin'], function(){
 
     Route::get( 'dashboard', [ 'as' => 'dashboard', 'uses' => 'App\Http\Controllers\Home@home' ] );
+    Route::get( 'user-status/{userId}/{statu} ', [ 'as' => 'user-status', 'uses' => 'App\Http\Controllers\User@changeStatu' ] );
+    Route::post( 'notice-save', [ 'as' => 'notice-save', 'uses' => 'App\Http\Controllers\Notice@save' ] );
 });

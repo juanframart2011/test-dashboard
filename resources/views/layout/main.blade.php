@@ -6,11 +6,11 @@
 
         @include( "layout.helper.header" )
         
-        <main class="container-fluid">
+        <main class="container-fluid mt-5">
             
             <div class="row">
 
-                <section class="col-md-10 content-data">@yield( "content" )</section>
+                <section class="col-md-10 offset-md-1 content-data">@yield( "content" )</section>
             </div>
         </main>
 

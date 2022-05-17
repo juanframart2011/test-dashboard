@@ -1,4 +1,4 @@
-<header class="header" data-aos="zoom-out-down" data-aos-duration="1000">
+{{--<header class="header" data-aos="zoom-out-down" data-aos-duration="1000">
 
 	@include( "layout.helper.header-top" )
     
@@ -13,4 +13,10 @@
 	        </nav>
 		@endif
     </div>
-</header>
+</header>--}}
+
+<nav class="navbar bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="{{ asset( 'img/logo.svg' ) }}" alt="" width="30" height="24"></a>
+	</div>
+</nav>

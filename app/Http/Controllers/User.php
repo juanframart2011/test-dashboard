@@ -17,6 +17,14 @@ use Validator;
 
 class User extends Controller
 {
+    public function changeStatu( Request $request, $userId, $statu ){
+
+        UserModel::Where( "id", $userId )->update([
+            "statu_id" => $statu,
+            "last_modification" => date( "Y-m-d H:i:s" )
+        ]);
+        return Redirect( 'admin/dashboard' )->with( 'message-success', 'Se realizo el cambio en el usuario' );
+    }
 
     public function edit( Request $request, $userId ){
 

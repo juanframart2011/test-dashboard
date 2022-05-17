@@ -73,6 +73,7 @@ $( document ).ready( function(){
         event.preventDefault();
         
         _clearInputs();
+        alerta.classList.add('d-none');
         
         $( ".btn-add-user" ).html( 'AGREGANDO <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>' ).attr( "disabled", true );
 
@@ -138,6 +139,7 @@ $( document ).ready( function(){
                         formUser.reset();
 
                         alerta.classList.remove('alert-danger');
+                        alerta.classList.remove('d-none');
                         alerta.classList.add('alert-success');
                         alerta_texto.innerHTML= datos.message;
                         alerta.style.display = "block";
@@ -150,6 +152,7 @@ $( document ).ready( function(){
                     else{
 
                         alerta.classList.remove('alert-success');
+                        alerta.classList.remove('d-none');
                         alerta.classList.add('alert-danger');
                         alerta_texto.innerHTML= datos.message;
 
@@ -171,6 +174,7 @@ $( document ).ready( function(){
             $( ".btn-add-user" ).html( 'REGISTRARSE' ).attr( "disabled", false );
 
             alerta.classList.remove('alert-success');
+            alerta.classList.remove('d-none');
             alerta.classList.add('alert-danger');
             alerta_texto.innerHTML = msgText;
             alerta.style.display = "block";
