@@ -9,17 +9,32 @@
         <h3 class="text-center">INICIA SESIÓN</h3>
     </div>
     <div class="row">
+        <div class="alert form-alert-login hidden text-center"></div>
         <form action="{{ route( 'login' ) }}" id="form-login" method="POST">
+            @if( !$errors->isEmpty() )
+                                            
+                <div class="row">
+                    <div class="col-8 col-md-8 col-lg-8 text-center alert alert-danger mb-4" role="alert">
+                        
+                        @foreach ( $errors->all() as $error )
+                            <strong>{{$error}}</strong><br>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
+
+            @csrf
             <div class="mb-3">
-                <input type="email" placeholder="EMAIL" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" placeholder="EMAIL" class="form-control" id="user" name="user" aria-describedby="userHelp">
             </div>
             <div class="mb-3">
                 <input type="password" placeholder="CONTRASEÑA" class="form-control" id="password" name="password">
             </div>
             <div class="row">
-                <div class="col-md-4 offset-md-4">
-                    <button type="submit" class="btn btn-primary">ENTRAR</button>
+                <div class="col-md-6 offset-md-3">
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary" id="btn-login">ENTRAR</button>
+                    </div>
                 </div>
             </div>
         </form>
