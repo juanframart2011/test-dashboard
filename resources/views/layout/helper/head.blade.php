@@ -45,6 +45,8 @@
     <script>
         var baseUrl = "{{ env( "APP_URL" ) }}";
     </script>
+
+    <link href="{{ asset( 'css/login.css' ) }}" rel="stylesheet">
     
     <!-- Hojas de estilo personalizadas -->
     @yield( "cssExtra" )
